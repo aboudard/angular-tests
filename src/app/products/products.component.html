@@ -1,0 +1,17 @@
+<table [items]="products">
+      <ng-template #header>
+        <tr>
+          <th *ngFor="let col of displayedColumns">
+            {{ col }}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template product #body let-product>
+        <tr [line]="product.currencyCode">
+          <td>{{ product.name }} / {{product.currencyCode}}</td>
+          <td>{{ product.priceA | currency | async }}</td>
+          <td>{{ product.priceB | currency | async }}</td>
+          <td>{{ product.priceC | currency | async }}</td>
+        </tr>
+      </ng-template>
+    </table>

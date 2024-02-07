@@ -1,0 +1,17 @@
+<header>
+    Log as :
+    <button (click)="admin()">Admin</button>
+    <button (click)="manager()">Manager</button>
+    <button (click)="reader()">Reader</button>
+    <button (click)="writer()">Writer</button>
+    <button (click)="readerWriter()">Reader and Writer</button>
+    <button (click)="client()">Client</button>
+    <button (click)="everyone()">Everyone</button>
+</header>
+
+<div>
+    {{ user$ | async | json }}
+</div>
+ 
+<div *hasRole="['WRITER']">DIV WRITER</div>
+<div *hasRole="['READER']">DIV READER</div>
